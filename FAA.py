@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 from glob import glob
 import os
+import sys
 
 dir='result'
 if len(sys.argv)>1:
@@ -12,14 +13,13 @@ file_list = glob(pth+"*.csv")
 etf_list = []
 for filename in file_list:
     etf_list.append(filename[len(pth):len(pth)+4])
-#etf_list = ['AMEM','EPRA', 'CBU3','IUAA','LCUW','XD9U','XDWM']
 dm = pd.DataFrame()
 rf = pd.DataFrame()
 pl=[]
 sl=[]
 # for i in range(len(file_list)):
 for i, etf in enumerate(etf_list):
-	df = pd.read_csv(etf + ' Historical Data.csv')
+	df = pd.read_csv(pth + etf + ' Historical Data.csv')
 	df.rename(columns={"Price":etf},inplace=True)
 	df.Date = pd.to_datetime(df['Date'])
 	column_price=df[etf]
