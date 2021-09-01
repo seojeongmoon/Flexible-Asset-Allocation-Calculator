@@ -20,6 +20,11 @@ Commodities: GSG,VNQ
 The FAA model is theorized in a paper titled "Generalized Momentum and Flexible Asset Allocation (FAA): An Heuristic Approach"(2012)
 https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2193735
 
+# Requirements #
+
+Python3
+Pandas
+
 # How do I use this code? #
 
 Download the code and data of each asset classes from investing.com - the duration can be of the last three to six months.
@@ -32,3 +37,5 @@ For instance,
 `python FAA.py tables`
 
 will generate a "tables" directory with the csv files. 
+
+#TODO: add argument to switch print mode
